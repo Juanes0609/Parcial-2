@@ -14,7 +14,6 @@
     </properties>
 
     <repositories>
-        <!-- 👇 Este repositorio es necesario para el plugin JavaFX -->
         <repository>
             <id>openjfx-repo</id>
             <url>https://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
@@ -38,8 +37,10 @@
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
+            <classifier>mac-aarch64</classifier>
         </dependency>
-    </dependencies>
+        
+        </dependencies>
 
     <build>
         <plugins>
@@ -52,13 +53,15 @@
                 </configuration>
             </plugin>
 
-            <!-- 👇 Plugin JavaFX -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>co.edu.uniquindio.poo.App</mainClass>
+                    <vmArgs>
+                        <vmArg>--enable-native-access=javafx.graphics</vmArg>
+                    </vmArgs>
                 </configuration>
             </plugin>
         </plugins>

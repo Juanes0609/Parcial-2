@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -11,9 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="20" styleClass="root-container" 
-stylesheets="@styles1.css" xmlns="http://javafx.com/javafx/25" 
-xmlns:fx="http://javafx.com/fxml/1" 
+<VBox spacing="20" 
+styleClass="root-container" 
+stylesheets="@styles1.css" 
+xmlns="http://javafx.com/javafx" 
+xmlns:fx="http://javafx.com/fxml" 
 fx:controller="co.edu.uniquindio.poo.controllers.FormularioController"> <padding>
     <Insets bottom="30" left="30" right="30" top="30" />
 </padding>
@@ -31,7 +34,7 @@ fx:controller="co.edu.uniquindio.poo.controllers.FormularioController"> <padding
 
         <GridPane hgap="15" vgap="20">
             <Label styleClass="form-label" text="Tipo:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="cbTipo" promptText="Ingrese el tipo del inmueble" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cbTipo" promptText="Ingrese el tipo del inmueble" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
             <Label styleClass="form-label" text="Ciudad:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
             <TextField fx:id="txtCiudad" promptText="ingrese la ciudad del inmueble" styleClass="text-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -63,7 +66,7 @@ fx:controller="co.edu.uniquindio.poo.controllers.FormularioController"> <padding
                 <Insets top="20" />
             </VBox.margin>
             <Button fx:id="btnCancel" onAction="#onCancel" text="Cancelar" />
-            <Button fx:id="btnSave" onAction="#onSaveProduct" text="Guardar Inmueble">
+            <Button fx:id="btnSave" onAction="#onSaveInmueble" text="Guardar Inmueble">
                 <font>
                     <Font name="System Bold" size="14" />
                 </font>
